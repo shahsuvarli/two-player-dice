@@ -1,21 +1,19 @@
 import { Component } from "react";
 
 class Player extends Component {
-  constructor() {
-    super();
-  }
   render() {
     return (
       <div className="player">
-        <div>
-          <div className="player-name">{this.props.title}</div>
-          <div className="player-score">Score: {this.props.score}</div>
+        <div className="header-conatiner">
+          <h2>{this.props.title}</h2>
+          <h3>Score: {this.props.score}</h3>
+          <h2 className={`status-${this.props.status}`}>{this.props.status}</h2>
         </div>
         <div className="player-dices">
-          <div className="dice">dice 1</div>
-          <div className="dice">dice 2</div>
+          <div className={`dice-${this.props.move}`}>{this.props.icon1}</div>
+          <div className={`dice-${this.props.move}`}>{this.props.icon2}</div>
         </div>
-      </div>
+        </div>
     );
   }
 }
